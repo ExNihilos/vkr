@@ -26,6 +26,9 @@
     <form class="taskPanel">
         <input type="submit" name="task6" value="Задание 6"/>
     </form>
+    <form class="taskPanel">
+        <input type="submit" name="task7" value="Задание 7"/>
+    </form>
 </div>
 
 
@@ -114,7 +117,7 @@ echo '<br>';
 
      for ($i=0; $i<count($array); $i++)
      {
-        echo "[".$i."] ".$array[$i].'<br>';
+        echo " [$i] $array[$i] <br>";
     }
 
 echo '<br>'."Сумма 3-го, 6-го и 8-го элементов: ".arraySum($array);
@@ -164,7 +167,7 @@ if (isset($_GET['task6'])): {
         $isTuesday = false;
         $m = $date->format("m");
 
-        echo "Вторники ". $month1.".".$year1.": ";
+        echo "Вторники $month1.$year1: ";
         while ($date->format("m") == $m) {
 
             if ($isTuesday === false) {
@@ -196,6 +199,8 @@ if (isset($_GET['task6'])): {
 </form>
 
 <?php endif; ?>
+
+
 
 </body>
 </html>
