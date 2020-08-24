@@ -112,10 +112,6 @@ function arraySum($array)
 $array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 echo '<br>';
 
-//    foreach ($array as $item) {
-//        echo $item.'<br>';
-//    }
-
      for ($i=0; $i<count($array); $i++)
      {
         echo "[".$i."] ".$array[$i].'<br>';
@@ -133,7 +129,6 @@ if (isset($_GET['task4'])) {
     $month = date("m");
     $day = date("d");
     $weekDay = "2";
-//echo "Год " . $year . " Месяц " . $month . " День " . $day . '<br>';
     $date = new DateTime("01.09.2020");
     $isTuesday = false;
     $m = $date->format("m");
@@ -159,15 +154,17 @@ if (isset($_GET['task4'])) {
 if (isset($_GET['task6'])): {
     function getTuesday($year, $month)           // 6
     {
-   //     $date = $_GET['dateChoice'];
-        //       $year = $date->format("Y");
-//        $month = $date->format("m");
+
+        $date = $_GET['date'];
+        $dateFormat = new DateTime("$date");
+        $year1 = $dateFormat->format("Y");
+        $month1 = $dateFormat->format("m");
         $weekDay = "2";
-        $date = new DateTime("01.$month.$year");
+        $date = new DateTime("01.$month1.$year1");
         $isTuesday = false;
         $m = $date->format("m");
 
-        echo "Вторники ". $month.".".$year.": ";
+        echo "Вторники ". $month1.".".$year1.": ";
         while ($date->format("m") == $m) {
 
             if ($isTuesday === false) {
