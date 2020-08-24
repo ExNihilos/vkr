@@ -3,7 +3,7 @@
 <head>
     <title>Homework</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../Homework2/homework2/index.css"/>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
 </head>
 <body>
 
@@ -112,13 +112,13 @@ function arraySum($array)
 $array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 echo '<br>';
 
-    foreach ($array as $item) {
-        echo $item.'<br>';
-    }
+//    foreach ($array as $item) {
+//        echo $item.'<br>';
+//    }
 
-    for ($i=0; i<count($array); $i++)
-    {
-        echo "[".$i."] ".$item.'<br>';
+     for ($i=0; $i<count($array); $i++)
+     {
+        echo "[".$i."] ".$array[$i].'<br>';
     }
 
 echo '<br>'."Сумма 3-го, 6-го и 8-го элементов: ".arraySum($array);
@@ -132,10 +132,11 @@ $year = date("Y");                      // 4
 $month = date("m");
 $day = date("d");
 $weekDay = "2";
-echo "Год " . $year . " Месяц " . $month . " День " . $day . '<br>';
+//echo "Год " . $year . " Месяц " . $month . " День " . $day . '<br>';
 $date = new DateTime("01.09.2020");
 $isTuesday = false;
 $m = $date->format("m");
+echo "Вторники сентября 2020-го: ";
 while ($date->format("m") == $m) {
     if ($isTuesday === false) {
         if ($date->format("N") === $weekDay) {
