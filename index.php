@@ -83,7 +83,7 @@ if (isset($_GET['task5'])):
 
 
     foreach ($array as $item) {
-        echo $item.'<br>';
+        echo '<div class="task">'.$item.'<br>'.'</div>';
     }
 ?>
 
@@ -128,56 +128,77 @@ endif;
 echo '<br>';
 
 
-$year = date("Y");                      // 4
-$month = date("m");
-$day = date("d");
-$weekDay = "2";
-//echo "Год " . $year . " Месяц " . $month . " День " . $day . '<br>';
-$date = new DateTime("01.09.2020");
-$isTuesday = false;
-$m = $date->format("m");
-echo "Вторники сентября 2020-го: ";
-while ($date->format("m") == $m) {
-    if ($isTuesday === false) {
-        if ($date->format("N") === $weekDay) {
-            $isTuesday = true;
-        } else {
-            $date->add(new DateInterval("P1D"));
-        }
-    }
-
-    if ($isTuesday === true) {
-        echo $date->format("d") . "\t";
-        $date->add(new DateInterval("P1W"));
-    }
-}
-
-function getTuesday($year, $month)           // 6
-{
+if (isset($_GET['task4'])) {
+    $year = date("Y");                      // 4
+    $month = date("m");
+    $day = date("d");
     $weekDay = "2";
-    $date = new DateTime("01.$month.$year");
+//echo "Год " . $year . " Месяц " . $month . " День " . $day . '<br>';
+    $date = new DateTime("01.09.2020");
     $isTuesday = false;
     $m = $date->format("m");
+    echo "Вторники сентября 2020-го: ";
     while ($date->format("m") == $m) {
-
         if ($isTuesday === false) {
-
             if ($date->format("N") === $weekDay) {
                 $isTuesday = true;
             } else {
                 $date->add(new DateInterval("P1D"));
             }
-        } else {
+        }
+
+        if ($isTuesday === true) {
             echo $date->format("d") . "\t";
             $date->add(new DateInterval("P1W"));
         }
     }
 }
 
-echo '<br>';
-echo getTuesday("2020", "08");
 
+
+if (isset($_GET['task6'])): {
+    function getTuesday($year, $month)           // 6
+    {
+   //     $date = $_GET['dateChoice'];
+        //       $year = $date->format("Y");
+//        $month = $date->format("m");
+        $weekDay = "2";
+        $date = new DateTime("01.$month.$year");
+        $isTuesday = false;
+        $m = $date->format("m");
+
+        echo "Вторники ". $month.".".$year.": ";
+        while ($date->format("m") == $m) {
+
+            if ($isTuesday === false) {
+                if ($date->format("N") === $weekDay) {
+                    $isTuesday = true;
+                }
+                else {
+                    $date->add(new DateInterval("P1D"));
+                }
+
+            }
+
+            else {
+                echo $date->format("d") . "\t";
+                $date->add(new DateInterval("P1W"));
+            }
+        }
+    }
+
+    echo '<br>';
+    echo getTuesday("2020", "08");
+}
 ?>
+
+<form class="task">
+    <input type="hidden" name="task6">
+    <input type="date" name="date">
+    <input type="submit" name="dateChoice" value="Выбрать">
+</form>
+
+<?php endif; ?>
 
 </body>
 </html>
