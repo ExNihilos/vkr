@@ -38,18 +38,21 @@ function firstTask()
 
 //firstTask();
 
+
 function secondTask()
 {
     global $pdo;
     $sql = "SELECT * FROM users WHERE age>50";
     $stmt = $pdo->query($sql);
     $array = $stmt->fetchAll();
-    foreach ($array as $item) {
-        echo $item['name'] . "\n";
-    }
+    return $array;
+
 }
 
-//secondTask();
+//$array = secondTask();
+//foreach ($array as $item) {
+//    echo "id: {$item['id']}; name: {$item['name']}; age: {$item['age']} \n";
+//}
 
 function thirdTask()
 {
@@ -57,22 +60,29 @@ function thirdTask()
     $sql = "SELECT * FROM users WHERE name LIKE '%ав%' OR name LIKE '%аб%'";
     $stmt = $pdo->query($sql);
     $array = $stmt->fetchAll();
-    echo json_encode($array);
+    return json_encode($array);
     //var_export(json_decode(json_encode($array)));
 }
 
-echo "\n";
-//thirdTask();
+//$json = thirdTask();
+//echo $json;
+
 
 function fourthTask()
 {
     global $pdo;
+    $sql = "SELECT * FROM users WHERE age>70";
+    $stmt = $pdo->query($sql);
+    $array = $stmt->fetchAll();
+    return $array;
     $sql = "UPDATE users SET name = 'Pepito' WHERE age>70";
     $pdo->exec($sql);
 }
 
-echo "\n";
-//fourthTask();
+//$array = fourthTask();
+//foreach ($array as $item) {
+//    echo "id:{$item['id']}; name:{$item['name']}; age:{$item['age']}\n";
+//}
 
 
 function fifthTask()
@@ -82,11 +92,10 @@ function fifthTask()
     $stmt = $pdo->query($sql);
     $array = $stmt->fetchAll();
     foreach ($array as $item) {
-        echo $item['name'] . "\n";
+        echo "name: {$item['name']}  \n";
     }
 }
 
-echo "\n";
 fifthTask();
 
 ?>
