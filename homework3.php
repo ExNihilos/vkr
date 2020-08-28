@@ -74,15 +74,15 @@ function fourthTask()
     $sql = "SELECT * FROM users WHERE age>70";
     $stmt = $pdo->query($sql);
     $array = $stmt->fetchAll();
-    return $array;
     $sql = "UPDATE users SET name = 'Pepito' WHERE age>70";
     $pdo->exec($sql);
+    return $array;
 }
 
-//$array = fourthTask();
-//foreach ($array as $item) {
-//    echo "id:{$item['id']}; name:{$item['name']}; age:{$item['age']}\n";
-//}
+$array = fourthTask();
+foreach ($array as $item) {
+    echo "id:{$item['id']}; name:{$item['name']}; age:{$item['age']}\n";
+}
 
 
 function fifthTask()
@@ -96,6 +96,6 @@ function fifthTask()
     }
 }
 
-fifthTask();
+//fifthTask();
 
 ?>
