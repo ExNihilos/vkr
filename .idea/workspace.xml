@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a90865c-c9e6-48ba-a409-3de56676af66" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/createPost.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentaryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentaryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/PostRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_14_073612_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_14_073612_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_14_085640_create_comentaries_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_14_085640_create_commentaries_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_14_085657_create_posts_tags_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_14_085657_create_posts_tags_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="2a90865c-c9e6-48ba-a409-3de56676af66" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +13,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -167,7 +156,7 @@
       <updated>1599997679183</updated>
       <workItem from="1599997680691" duration="22208000" />
       <workItem from="1600080119166" duration="1040000" />
-      <workItem from="1600097249694" duration="7835000" />
+      <workItem from="1600097249694" duration="8186000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1600080448754</created>
@@ -176,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600080448754</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit">
+      <created>1600109434076</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600109434076</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,10 +191,10 @@
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
     <state x="663" y="258" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.34.1848.1046@72.34.1848.1046" timestamp="1600108300820" />
-    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2" timestamp="1600080448595">
+    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2" timestamp="1600109434014">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
-    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2/72.34.1848.1046@72.34.1848.1046" timestamp="1600080448595" />
+    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2/72.34.1848.1046@72.34.1848.1046" timestamp="1600109434014" />
     <state x="726" y="258" width="530" height="605" key="FileChooserDialogImpl" timestamp="1600097488283">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
@@ -215,10 +211,18 @@
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
     <state x="360" y="104" width="1271" height="912" key="SettingsEditor/72.34.1848.1046@72.34.1848.1046" timestamp="1600080127335" />
-    <state x="491" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2" timestamp="1600081085180">
+    <state x="491" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2" timestamp="1600109513678">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
-    <state x="491" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2/72.34.1848.1046@72.34.1848.1046" timestamp="1600081085180" />
+    <state x="491" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2/72.34.1848.1046@72.34.1848.1046" timestamp="1600109513678" />
+    <state x="737" y="456" width="518" height="209" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600109508019">
+      <screen x="72" y="34" width="1848" height="1046" />
+    </state>
+    <state x="737" y="456" width="518" height="209" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/72.34.1848.1046@72.34.1848.1046" timestamp="1600109508019" />
+    <state x="753" y="448" width="476" height="224" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1600109420091">
+      <screen x="72" y="34" width="1848" height="1046" />
+    </state>
+    <state x="753" y="448" width="476" height="224" key="git4idea.remote.GitConfigureRemotesDialog/72.34.1848.1046@72.34.1848.1046" timestamp="1600109420091" />
     <state x="576" y="250" key="run.anything.popup" timestamp="1600097563299">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
