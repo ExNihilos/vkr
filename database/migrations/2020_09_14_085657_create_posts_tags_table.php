@@ -15,10 +15,10 @@ class CreatePostsTagsTable extends Migration
     {
         Schema::create('posts_tags', function (Blueprint $table) {
             $table->id();
-            $table->integer('post_id')->nullable();
-            $table->integer('tag_id')->nullable();
-            $table->foreign('post_id')->references('id')->on('posts');
-            $table->foreign('tag_id')->references('id')->on('tags');
+//            $table->biginteger('post_id')->nullable();
+//            $table->biginteger('tag_id')->nullable();
+            $table->foreignId('post_id')->nullable()->references('id')->on('posts');
+            $table->foreignId('tag_id')->nullable()>references('id')->on('tags')->nullable();
             $table->timestamps();
         });
     }

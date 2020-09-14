@@ -16,13 +16,15 @@ class PostController extends Controller
         $this->postRepository = app(PostRepository::class);
     }
 
-    public function create(PostRequest $request)
+    public function create(Request $request)
     {
-        return view();
+        return view('createPost');
     }
 
     public function store(PostRequest $request)
     {
-
+        //$request = $request->validated();
+        $attributes = $request->validated();
+        $post = $this->postRepository->store($attributes);
     }
 }
