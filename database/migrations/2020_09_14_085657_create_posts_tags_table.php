@@ -18,7 +18,7 @@ class CreatePostsTagsTable extends Migration
 //            $table->biginteger('post_id')->nullable();
 //            $table->biginteger('tag_id')->nullable();
             $table->foreignId('post_id')->nullable()->references('id')->on('posts');
-            $table->foreignId('tag_id')->nullable()>references('id')->on('tags')->nullable();
+            $table->foreignId('tag_id')->nullable()->references('id')->on('tags');
             $table->timestamps();
         });
     }

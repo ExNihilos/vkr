@@ -21,7 +21,7 @@ class CreatePostsTable extends Migration
             $table->dateTime('publication_date')->nullable();
             $table->integer('rating')->nullable();
             //$table->bigInteger('user_id')->nullable()->unsigned();
-            $table->foreignId('user_id')->nullable()->references('id')->on('users');
+            $table->foreignId('user_id')->default(1)->references('id')->on('users');
             //$table->string('link')->nullable();
             $table->timestamps();
         });
