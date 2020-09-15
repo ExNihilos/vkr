@@ -45,3 +45,5 @@ Route::post('/store', [PostController::class, 'store'])->name('store');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'showPosts'])->name('home');
+Route::get('/commentary',[\App\Http\Controllers\HomeController::class, 'showCommentary'])->name('commentary');
+Route::post('/commentary',[\App\Http\Controllers\HomeController::class, 'addCommentary'])->name('addCommentary');

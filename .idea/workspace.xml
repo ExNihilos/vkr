@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2a90865c-c9e6-48ba-a409-3de56676af66" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/inc/posts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vkr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vkr.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/commentary.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Commentary.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Commentary.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post_Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Posts_Tags.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_14_073612_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_14_073612_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_14_085657_create_posts_tags_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_14_085657_create_posts_tags_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_14_085640_create_commentaries_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_14_085640_create_commentaries_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/inc/posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/posts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +147,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../live-goodline-bot-admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../paste.loc" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -181,7 +173,7 @@
       <updated>1599997679183</updated>
       <workItem from="1599997680691" duration="22208000" />
       <workItem from="1600080119166" duration="1040000" />
-      <workItem from="1600097249694" duration="23565000" />
+      <workItem from="1600097249694" duration="31912000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1600080448754</created>
@@ -204,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600109944732</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added controllers and models">
+      <created>1600154912394</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600154912394</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,25 +211,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="Added controllers and models" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added controllers and models" />
   </component>
   <component name="WindowStateProjectService">
     <state x="677" y="275" width="618" height="577" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600148501669">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
     <state x="677" y="275" width="618" height="577" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.34.1848.1046@72.34.1848.1046" timestamp="1600148501669" />
-    <state x="663" y="258" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600151825124">
+    <state x="663" y="258" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600159714581">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
-    <state x="663" y="258" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.34.1848.1046@72.34.1848.1046" timestamp="1600151825124" />
-    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2" timestamp="1600109944692">
+    <state x="663" y="258" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.34.1848.1046@72.34.1848.1046" timestamp="1600159714581" />
+    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2" timestamp="1600154912312">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
-    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2/72.34.1848.1046@72.34.1848.1046" timestamp="1600109944692" />
-    <state x="726" y="258" width="530" height="605" key="FileChooserDialogImpl" timestamp="1600148598779">
+    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2/72.34.1848.1046@72.34.1848.1046" timestamp="1600154912312" />
+    <state x="726" y="258" width="530" height="605" key="FileChooserDialogImpl" timestamp="1600156258524">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
-    <state x="726" y="258" width="530" height="605" key="FileChooserDialogImpl/72.34.1848.1046@72.34.1848.1046" timestamp="1600148598779" />
+    <state x="726" y="258" width="530" height="605" key="FileChooserDialogImpl/72.34.1848.1046@72.34.1848.1046" timestamp="1600156258524" />
     <state x="538" y="264" width="906" height="593" key="MultipleFileMergeDialog" timestamp="1600133978996">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
@@ -247,10 +247,10 @@
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
     <state x="360" y="104" width="1271" height="912" key="SettingsEditor/72.34.1848.1046@72.34.1848.1046" timestamp="1600080127335" />
-    <state x="491" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2" timestamp="1600134022989">
+    <state x="491" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2" timestamp="1600154919138">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
-    <state x="491" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2/72.34.1848.1046@72.34.1848.1046" timestamp="1600134022989" />
+    <state x="491" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2/72.34.1848.1046@72.34.1848.1046" timestamp="1600154919138" />
     <state x="737" y="456" width="518" height="209" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600109508019">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
@@ -267,5 +267,9 @@
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
     <state x="576" y="250" key="run.anything.popup/72.34.1848.1046@72.34.1848.1046" timestamp="1600097563299" />
+    <state x="575" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1600163377011">
+      <screen x="72" y="34" width="1848" height="1046" />
+    </state>
+    <state x="575" y="45" width="840" height="1034" key="search.everywhere.popup/72.34.1848.1046@72.34.1848.1046" timestamp="1600163377011" />
   </component>
 </project>

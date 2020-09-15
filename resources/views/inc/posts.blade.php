@@ -7,6 +7,9 @@
             <div class="post" id="post" style="border-bottom:3px solid; padding-bottom:10px;">
                 <h3>{{$post->title}}</h3>
                 <div class="text"> {{$post->text}} </div>
+                <a href="{{route('commentary', $post->id)}}">
+                    <input type="button" name="btn1" value="Добавить комментарий" style="margin-top:10px; margin-left:85%">
+                </a>
             </div>
         @endforeach
     </div>

@@ -6,6 +6,7 @@ use App\Http\Requests\CommentaryRequest;
 use App\Http\Requests\PostRequest;
 use App\Repositories\PostRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -25,6 +26,7 @@ class PostController extends Controller
     {
         //$request = $request->validated();
         $attributes = $request->validated();
+        $attributes['user_id'] = Auth::user()->getAuthIdentifier();
         $post = $this->postRepository->store($attributes);
     }
 }
