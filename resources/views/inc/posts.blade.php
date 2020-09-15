@@ -10,6 +10,9 @@
                 <a href="{{route('commentary', $post->id)}}">
                     <input type="button" name="btn1" value="Добавить комментарий" style="margin-top:10px; margin-left:85%">
                 </a>
+                <a href="{{route('rate',$post->id)}}">
+                    <input type="button1" name="btn11" value="+" style="margin-top:10px; margin-left:85%">
+                </a>
             </div>
         @endforeach
     </div>

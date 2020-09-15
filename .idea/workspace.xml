@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a90865c-c9e6-48ba-a409-3de56676af66" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/commentary.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_14_085640_create_commentaries_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_14_085640_create_commentaries_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/inc/posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/posts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -173,7 +171,8 @@
       <updated>1599997679183</updated>
       <workItem from="1599997680691" duration="22208000" />
       <workItem from="1600080119166" duration="1040000" />
-      <workItem from="1600097249694" duration="31912000" />
+      <workItem from="1600097249694" duration="32699000" />
+      <workItem from="1600165503018" duration="1564000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1600080448754</created>
@@ -203,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600154912394</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added functional of commentary interaction">
+      <created>1600163685689</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600163685689</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +218,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
     <MESSAGE value="Added controllers and models" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added controllers and models" />
+    <MESSAGE value="Added functional of commentary interaction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added functional of commentary interaction" />
   </component>
   <component name="WindowStateProjectService">
     <state x="677" y="275" width="618" height="577" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600148501669">
@@ -223,10 +230,10 @@
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
     <state x="663" y="258" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.34.1848.1046@72.34.1848.1046" timestamp="1600159714581" />
-    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2" timestamp="1600154912312">
+    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2" timestamp="1600163685625">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
-    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2/72.34.1848.1046@72.34.1848.1046" timestamp="1600154912312" />
+    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2/72.34.1848.1046@72.34.1848.1046" timestamp="1600163685625" />
     <state x="726" y="258" width="530" height="605" key="FileChooserDialogImpl" timestamp="1600156258524">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
