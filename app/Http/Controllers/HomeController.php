@@ -67,6 +67,8 @@ class HomeController extends Controller
     }
 
     public function rate(Request $request) {
-        dd($request);
+       // dd($request);
     }
+
+
 }

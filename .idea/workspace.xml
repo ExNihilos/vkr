@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a90865c-c9e6-48ba-a409-3de56676af66" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/PostService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_14_085640_create_commentaries_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_14_085640_create_commentaries_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentaryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentaryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/CommentaryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CommentaryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/PostRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PostRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/inc/posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/posts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,13 +150,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../paste.loc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/storage" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -172,7 +179,7 @@
       <workItem from="1599997680691" duration="22208000" />
       <workItem from="1600080119166" duration="1040000" />
       <workItem from="1600097249694" duration="32699000" />
-      <workItem from="1600165503018" duration="1564000" />
+      <workItem from="1600165503018" duration="16839000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1600080448754</created>
@@ -209,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600163685689</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added functional of commentary interaction">
+      <created>1600167099672</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1600167099672</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,14 +240,14 @@
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
     <state x="677" y="275" width="618" height="577" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.34.1848.1046@72.34.1848.1046" timestamp="1600148501669" />
-    <state x="663" y="258" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600159714581">
+    <state x="663" y="258" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600239839797">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
-    <state x="663" y="258" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.34.1848.1046@72.34.1848.1046" timestamp="1600159714581" />
-    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2" timestamp="1600163685625">
+    <state x="663" y="258" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.34.1848.1046@72.34.1848.1046" timestamp="1600239839797" />
+    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2" timestamp="1600167099580">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
-    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2/72.34.1848.1046@72.34.1848.1046" timestamp="1600163685625" />
+    <state x="438" y="50" width="1106" height="1020" key="CommitChangelistDialog2/72.34.1848.1046@72.34.1848.1046" timestamp="1600167099580" />
     <state x="726" y="258" width="530" height="605" key="FileChooserDialogImpl" timestamp="1600156258524">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
@@ -242,10 +256,10 @@
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
     <state x="538" y="264" width="906" height="593" key="MultipleFileMergeDialog/72.34.1848.1046@72.34.1848.1046" timestamp="1600133978996" />
-    <state x="722" y="228" width="538" height="672" key="NewPhpClassDialog" timestamp="1600078888267">
+    <state x="722" y="228" width="538" height="672" key="NewPhpClassDialog" timestamp="1600238884250">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
-    <state x="722" y="228" width="538" height="672" key="NewPhpClassDialog/72.34.1848.1046@72.34.1848.1046" timestamp="1600078888267" />
+    <state x="722" y="228" width="538" height="672" key="NewPhpClassDialog/72.34.1848.1046@72.34.1848.1046" timestamp="1600238884250" />
     <state x="790" y="192" width="401" height="736" key="RollbackChangesDialog" timestamp="1600080367068">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
@@ -254,18 +268,18 @@
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
     <state x="360" y="104" width="1271" height="912" key="SettingsEditor/72.34.1848.1046@72.34.1848.1046" timestamp="1600080127335" />
-    <state x="491" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2" timestamp="1600154919138">
+    <state x="491" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2" timestamp="1600167103513">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
-    <state x="491" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2/72.34.1848.1046@72.34.1848.1046" timestamp="1600154919138" />
+    <state x="491" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2/72.34.1848.1046@72.34.1848.1046" timestamp="1600167103513" />
     <state x="737" y="456" width="518" height="209" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600109508019">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
     <state x="737" y="456" width="518" height="209" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/72.34.1848.1046@72.34.1848.1046" timestamp="1600109508019" />
-    <state x="616" y="240" width="759" height="634" key="find.popup" timestamp="1600146116068">
+    <state x="616" y="240" width="759" height="752" key="find.popup" timestamp="1600240311248">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
-    <state x="616" y="240" width="759" height="634" key="find.popup/72.34.1848.1046@72.34.1848.1046" timestamp="1600146116068" />
+    <state x="616" y="240" width="759" height="752" key="find.popup/72.34.1848.1046@72.34.1848.1046" timestamp="1600240311248" />
     <state x="753" y="448" width="476" height="224" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1600109420091">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
@@ -274,9 +288,9 @@
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
     <state x="576" y="250" key="run.anything.popup/72.34.1848.1046@72.34.1848.1046" timestamp="1600097563299" />
-    <state x="575" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1600163377011">
+    <state x="575" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1600239598327">
       <screen x="72" y="34" width="1848" height="1046" />
     </state>
-    <state x="575" y="45" width="840" height="1034" key="search.everywhere.popup/72.34.1848.1046@72.34.1848.1046" timestamp="1600163377011" />
+    <state x="575" y="45" width="840" height="1034" key="search.everywhere.popup/72.34.1848.1046@72.34.1848.1046" timestamp="1600239598327" />
   </component>
 </project>

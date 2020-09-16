@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+
 
 //
 //Route::get('/', function () {
@@ -39,12 +37,16 @@ Route::get('/', function () {
 //});
 
 //Route::get('/',  [PostController::class, 'index'])->name('create');
+
+Route::get('/', [PostController::class, 'index'])->name('index');
+
 Route::get('/create', [PostController::class, 'create'])->name('create');
 Route::post('/store', [PostController::class, 'store'])->name('store');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'showPosts'])->name('home');
-Route::get('/commentary',[\App\Http\Controllers\HomeController::class, 'showCommentary'])->name('commentary');
-Route::post('/commentary',[\App\Http\Controllers\HomeController::class, 'addCommentary'])->name('addCommentary');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'rate'])->name('rate');
+Route::get('/commentary', [\App\Http\Controllers\HomeController::class, 'showCommentary'])->name('commentary');
+Route::post('/commentary', [\App\Http\Controllers\HomeController::class, 'addCommentary'])->name('addCommentary');
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'sort'])->name('sort');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'rate'])->name('rate');

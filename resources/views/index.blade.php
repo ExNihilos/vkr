@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -10,5 +14,9 @@
 <form action="{{route('create')}}" method="get">
     <input type=submit name="but1" id="1">
 </form>
+
+@include('inc.posts')
 </body>
 </html>
+
+@endsection
