@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CommentaryRequest;
 use App\Models\Commentary;
+use App\Models\Post;
 use App\Models\User;
 use App\Repositories\CommentaryRepository;
 use Illuminate\Http\Request;
@@ -36,15 +37,17 @@ class CommentaryController extends Controller
 //            ->route('home')
 //            ;//->with('success',  "Запись успешно сохранена!  Cсылка на пасту: /commentary/link/$hash");
 
-        dd($request);
+        //dd($request);
+
         $commentary = $request->validated();
         $userid = Auth::user()->getAuthIdentifier();
         $user=User::where('id',$userid)->first();
-        $commentary['user'] = $user;
+        $commentary['user'] = $user->name;
+        $post_id=$request->id;
+        $commentary['post_id'] = $post_id;
+
         $commentary = $this->commentaryRepository->store($commentary);
-
-
-        $commentary = $this->commentaryRepository->store($commentary);
-
+        $post = Post::where('id', $post_id)->first();
+        return view('post', ['post' => $post]);
     }
 }

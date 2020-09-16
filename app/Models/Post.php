@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','text', 'user_id'];
+    protected $fillable = ['title','text','user_id','rating'];
 
     public function commentaries()
     {

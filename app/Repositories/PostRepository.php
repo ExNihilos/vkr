@@ -12,7 +12,11 @@ class PostRepository
         return Post::create($post);
     }
 
-    public function getPosts(Array $attributes) {
+    public function update(Array $post) {
+        return Post::update($post);
+    }
+
+    public function getPosts() {
         return Post::orderBy('created_at', 'desc')
             ->take(10)
             ->get();

@@ -4,8 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header-pills"><h3>{{ __('Создать пост') }}</h3></div>
+            <div class="card-header-pills h4" >
+                <div >
+                    {{ __('Создать пост') }}
+                </div>
 
 {{--                <div class="card-body">--}}
 {{--                    @if (session('status'))--}}
@@ -21,7 +23,7 @@
             </div>
 
 
-            <form class="col-md-8" action="{{'store'}}" method="post" style="margin-top: 20px;">
+            <form class="col-md-8" action="{{route('store')}}" method="post" style="margin-top: 20px;">
                 @csrf
                 <div class="form-group">
                     <label for="title">Заголовок</label>
@@ -35,24 +37,11 @@
                 <button type="reset" class="btn-info"> Очистить </button>
             </form>
 
-        <div class="container">
-            <form action="{{'sort'}}" method="get">
-                <button type="submit" class="btn-rounded">
-                    По рейтингу
-                </button>
-            </form>
 
-            <form action="{{'sort'}}" method="get">
-                <button type="submit" class="btn-rounded">
-                    По дате
-                </button>
-            </form>
-        </div>
+
         @include('inc.posts')
         </div>
 
     </div>
-
-</div>
 
 @endsection

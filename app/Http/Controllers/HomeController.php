@@ -47,12 +47,4 @@ class HomeController extends Controller
         return $posts;
     }
 
-
-
-
-    public function rate(Request $request) {
-       // dd($request);
-    }
-
-
 }

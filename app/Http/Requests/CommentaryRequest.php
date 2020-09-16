@@ -13,7 +13,7 @@ class CommentaryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true; //false
     }
 
     /**
@@ -32,7 +32,7 @@ class CommentaryRequest extends FormRequest
     {
         return [
             'text.required' => 'Поле должно быть заполнено',
-            'text:max' => 'Не более 500 символов'
+            'text.max' => 'Не более 500 символов'
         ];
     }
 }

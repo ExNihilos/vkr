@@ -26,10 +26,9 @@ class PostRequest extends FormRequest
         return [
             'title' => 'required|min:3',
             'text' => 'required|min:3',
-
-
         ];
     }
+
     public function messages()
     {
         return [
@@ -37,7 +36,6 @@ class PostRequest extends FormRequest
           'text.required' => 'Поле должно быть заполнено',
             'title:min' => 'Не менее трех символов',
             'text:min' => 'Не менее трех символов'
-
         ];
     }
 }

@@ -19,7 +19,7 @@ class CreateCommentariesTable extends Migration
             $table->string('user')->nullable();
             //$table->biginteger('post_id')->nullable()->unsigned();
             $table->integer('rating')->nullable();
-            $table->foreignId('post_id')->default(1)->nullable()->references('id')->on('posts');
+            $table->foreignId('post_id')->default(1)->references('id')->on('posts');
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CommentaryRequest;
 use App\Http\Requests\PostRequest;
+use App\Models\Commentary;
 use App\Models\Post;
 use App\Repositories\PostRepository;
 use App\Services\PostService;
@@ -28,10 +29,10 @@ class PostController extends Controller
     }
 
 
-    public function index(Request $request)
+    public function index()
     {
         $posts = $this->postRepository->getPosts();
-        return view('index', ['posts' => $posts]);
+        return redirect()->route('home')->with('success', ['posts' => $posts]);
     }
 
 
@@ -43,7 +44,10 @@ class PostController extends Controller
         $post = $this->postRepository->store($post);
 //        echo $post; dd($post);
         $posts= $this->postRepository->getPosts();
-        return view('home', ['posts' => $posts] );
+        return redirect()
+            ->route('home')
+            ->with('success',  ['posts' => $posts]);
+//        return view('home', ['posts' => $posts] ); Не перенаправляет на страницу
     }
 
 //    public function getPosts()
@@ -55,43 +59,31 @@ class PostController extends Controller
 //        return $posts;
 //    }
 
-    public function sort() {
-        $posts=$this->postRepository->sortByRating();
-        return view('home', ['posts' => $posts]);
+    public function sort($type) {
+
+        if ($type=='rating') {
+            $posts=$this->postRepository->sortByRating();
+            return view('home', ['posts' => $posts]);
+        }
+
+        elseif ($type='date') {
+           return $this->index();
+        }
     }
 
     public function showPost($id) {
         $post = Post::where('id', $id)->first();
-        return view('post', ['post' => $post]);
+        //$commentaries = Commentary::where('post_id', $id)->get();
+        return view('post', ['post' => $post]); // ?
     }
 
-    public function getLinkedPaste($ref)
-    {
-        $curDate = Carbon::now();
-        $paste = Paste::where('ref', $ref)->first();
-
-        if ($paste->expTime!=null)
-        {
-            if($curDate<$paste->expTime)
-            {
-                $publicPastes = $this->getPublicPastes();
-                return view ('onePaste', ['data' => $paste, 'pastes' => $publicPastes]);
-            }
-
-            else
-            {
-                echo  $paste->expTime, " - Срок хранения пасты истек!";
-            }
-        }
-
-        else
-        {
-            $paste->expTime = "без ограничения";
-            $publicPastes=$this->getPublicPastes();
-            return view ('onePaste', ['data' => $paste, 'pastes' => $publicPastes]);
-        }
-
-
+    public function rate($id) {
+        $post = Post::where('id', $id)->first();
+        $post->rating+=1;
+        $post->save();
+        //return view('post', ['post'=>$post]);
+        return redirect()
+            ->route('detail',$post->id)
+            ->with('success', ['post'=>$post]);
     }
-
 }
