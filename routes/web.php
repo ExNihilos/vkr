@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CommentaryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,8 +47,10 @@ Route::post('/store', [PostController::class, 'store'])->name('store');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'showPosts'])->name('home');
-Route::get('/commentary', [\App\Http\Controllers\HomeController::class, 'showCommentary'])->name('commentary');
-Route::post('/commentary', [\App\Http\Controllers\HomeController::class, 'addCommentary'])->name('addCommentary');
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'sort'])->name('sort');
+Route::get('/home', [HomeController::class, 'showPosts'])->name('home');
+//Route::get('/commentary', [CommentaryController::class, 'showCommentary'])->name('commentary');
+Route::post('/commentary', [CommentaryController::class, 'store'])->name('addCommentary');
+Route::get('/home/sort', [PostController::class, 'sort'])->name('sort');
+Route::get('home/posts/{id}', [PostController::class, 'showPost'])->name('detail');
+//Route::get('/home/sortd', [\App\Http\Controllers\PostController::class, 'sort'])->name('sortd');
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'rate'])->name('rate');

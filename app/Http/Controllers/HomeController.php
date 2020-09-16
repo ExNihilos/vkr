@@ -48,23 +48,7 @@ class HomeController extends Controller
     }
 
 
-    public function showCommentary()
-    {
-        return view('commentary');
-    }
 
-    public function addCommentary(Request $request)
-    {
-//        dd($request);
-        $commentary = new Commentary();
-        $commentary->text = $request->input('text');
-        $commentary->post_id = 10;
-        $commentary->user = "aaa";
-        $commentary->save();
-        return redirect()
-           ->route('home')
-          ;//->with('success',  "Запись успешно сохранена!  Cсылка на пасту: /commentary/link/$hash");
-    }
 
     public function rate(Request $request) {
        // dd($request);

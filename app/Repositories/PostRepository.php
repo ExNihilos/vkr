@@ -18,9 +18,10 @@ class PostRepository
             ->get();
     }
 
-    public function sortByRating(Array $attributes) {
-        return Post::orderBy('rating')
+    public function sortByRating() {
+        return Post::orderBy('rating', 'desc')
             ->take(10)
             ->get();
     }
+
 }
