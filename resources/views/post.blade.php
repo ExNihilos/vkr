@@ -41,8 +41,12 @@
                 <h4 class="mt-5">Комментарии: </h4>
                  @foreach($post->commentaries as $commentary)
                      <div class="container-md mt-5">
-                         <h5 class="bg-primary p-2"> Комментарий от: {{$commentary->user}}</h5>
+                         <h4 class="bg-primary p-2"> Комментарий от: {{$commentary->user}}</h4>
                          <h4 class="bg-success p-2"> {{$commentary->text}} </h4>
+                         <h6 class="bg-success p-2"> Рейтинг: {{$commentary->rating}} </h6>
+                         <form action="{{route('commentary.rating', $commentary->id)}}">
+                             <button class="btn-outline-primary mt-3" type="submit"> Оценить </button>
+                         </form>
                     </div>
                   @endforeach
              </div>

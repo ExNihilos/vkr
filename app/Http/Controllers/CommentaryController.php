@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CommentaryRequest;
 use App\Models\Commentary;
 use App\Models\Post;
+use App\Models\Rating;
 use App\Models\User;
 use App\Repositories\CommentaryRepository;
 use Illuminate\Http\Request;
@@ -41,13 +42,36 @@ class CommentaryController extends Controller
 
         $commentary = $request->validated();
         $userid = Auth::user()->getAuthIdentifier();
-        $user=User::where('id',$userid)->first();
+        $user = User::where('id', $userid)->first();
         $commentary['user'] = $user->name;
-        $post_id=$request->id;
+        $post_id = $request->id;
         $commentary['post_id'] = $post_id;
 
         $commentary = $this->commentaryRepository->store($commentary);
         $post = Post::where('id', $post_id)->first();
         return view('post', ['post' => $post]);
+    }
+
+    public function rate($id)
+    {
+        $userId = Auth::user()->getAuthIdentifier();
+        $commentary= Commentary::where('id', $id)->first();
+
+        if (is_null(Rating::where([['subject_id', $id], ['user_id', $userId]])->first())) {
+            $rating[] = new Rating();
+            $rating['user_id'] = $userId;
+            $rating['subject_id'] = $id;
+            $rating['type'] = 'commentary';
+            Rating::create($rating);
+
+            $commentary->rating += 1;
+            $commentary->save();
+        }
+
+//        return view('post');
+//        return redirect()
+//            ->route('post.show')
+//            ->with('success');
+
     }
 }

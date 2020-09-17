@@ -54,3 +54,5 @@ Route::post('/commentaries/store', [CommentaryController::class, 'store'])->name
 Route::get('/home/sort/{type}', [PostController::class, 'sort'])->name('post.sort');
 Route::get('home/posts/{id}', [PostController::class, 'showPost'])->name('post.show');
 Route::get('/home/posts/{id}/rate', [PostController::class, 'rate'])->name('post.rating');
+Route::get('/home/posts/{id}/commentary', [CommentaryController::class, 'rate'])->name('commentary.rating');
+

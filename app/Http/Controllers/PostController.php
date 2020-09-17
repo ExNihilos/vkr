@@ -6,10 +6,13 @@ use App\Http\Requests\CommentaryRequest;
 use App\Http\Requests\PostRequest;
 use App\Models\Commentary;
 use App\Models\Post;
+use App\Models\Rating;
 use App\Repositories\PostRepository;
 use App\Services\PostService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Ramsey\Uuid\Generator\RandomGeneratorFactory;
+use function PHPUnit\Framework\isNull;
 
 class PostController extends Controller
 {
@@ -38,7 +41,10 @@ class PostController extends Controller
 
     public function store(PostRequest $post)
     {
-        $request = $request->validated();
+
+
+
+        //$request = $request->validated();
         //$post = $request->validated();
         $post['user_id'] = Auth::user()->getAuthIdentifier();
         $post = $this->postRepository->store($post);
@@ -78,12 +84,24 @@ class PostController extends Controller
     }
 
     public function rate($id) {
+        $userId = Auth::user()->getAuthIdentifier();
         $post = Post::where('id', $id)->first();
-        $post->rating+=1;
-        $post->save();
-        //return view('post', ['post'=>$post]);
+
+        if (is_null(Rating::where([['subject_id', $id], ['user_id', $userId]])->first())){
+            $rating[] = new Rating();
+            $rating['user_id']=$userId;
+            $rating['subject_id'] = $id;
+            $rating['type'] = 'post';
+            Rating::create($rating);
+
+            $post->rating+=1;
+            $post->save();
+            //return view('post', ['post'=>$post]);
+        }
+
         return redirect()
             ->route('post.show',$post->id)
             ->with('success', ['post'=>$post]);
+
     }
 }
