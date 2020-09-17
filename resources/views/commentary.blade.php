@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="{{route('addCommentary')}}" method="post">
+<form action="{{route('commentary.store')}}" method="post">
     @csrf
     <textarea name="text" id="text" cols="30" rows="10"> </textarea>
     <input id="button" type="submit" value="Отправить" class="buttons">

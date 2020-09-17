@@ -41,16 +41,16 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/',  [PostController::class, 'index'])->name('create');
 
-Route::get('/', [PostController::class, 'index'])->name('index');
+Route::get('/', [PostController::class, 'index'])->name('post.index');
 
-Route::get('/create', [PostController::class, 'create'])->name('create');
-Route::post('/posts/store', [PostController::class, 'store'])->name('store');
+Route::get('/create', [PostController::class, 'create'])->name('post.create');
+Route::post('/posts/store', [PostController::class, 'store'])->name('post.store');
 
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'showPosts'])->name('home');
 //Route::get('/commentary', [CommentaryController::class, 'showCommentary'])->name('commentary');
-Route::post('/commentaries/store', [CommentaryController::class, 'store'])->name('addCommentary');
-Route::get('/home/sort/{type}', [PostController::class, 'sort'])->name('sort');
-Route::get('home/posts/{id}', [PostController::class, 'showPost'])->name('detail');
-Route::get('/home/posts/{id}/rate', [PostController::class, 'rate'])->name('rating');
+Route::post('/commentaries/store', [CommentaryController::class, 'store'])->name('commentary.store');
+Route::get('/home/sort/{type}', [PostController::class, 'sort'])->name('post.sort');
+Route::get('home/posts/{id}', [PostController::class, 'showPost'])->name('post.show');
+Route::get('/home/posts/{id}/rate', [PostController::class, 'rate'])->name('post.rating');

@@ -23,7 +23,7 @@
             </div>
 
 
-            <form class="col-md-8" action="{{route('store')}}" method="post" style="margin-top: 20px;">
+            <form class="col-md-8" action="{{route('post.store')}}" method="post" style="margin-top: 20px;">
                 @csrf
                 <div class="form-group">
                     <label for="title">Заголовок</label>

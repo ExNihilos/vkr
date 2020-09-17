@@ -36,10 +36,10 @@ class PostController extends Controller
     }
 
 
-    public function store(PostRequest $request)
+    public function store(PostRequest $post)
     {
-        //$request = $request->validated();
-        $post = $request->validated();
+        $request = $request->validated();
+        //$post = $request->validated();
         $post['user_id'] = Auth::user()->getAuthIdentifier();
         $post = $this->postRepository->store($post);
 //        echo $post; dd($post);
@@ -47,7 +47,7 @@ class PostController extends Controller
         return redirect()
             ->route('home')
             ->with('success',  ['posts' => $posts]);
-//        return view('home', ['posts' => $posts] ); Не перенаправляет на страницу
+//        return view('home', ['posts' => $posts] );// Не перенаправляет на страницу
     }
 
 //    public function getPosts()
@@ -61,14 +61,14 @@ class PostController extends Controller
 
     public function sort($type) {
 
-        if ($type=='rating') {
+        if ($type==='rating') {
             $posts=$this->postRepository->sortByRating();
             return view('home', ['posts' => $posts]);
         }
 
-        elseif ($type='date') {
+
            return $this->index();
-        }
+
     }
 
     public function showPost($id) {
@@ -83,7 +83,7 @@ class PostController extends Controller
         $post->save();
         //return view('post', ['post'=>$post]);
         return redirect()
-            ->route('detail',$post->id)
+            ->route('post.show',$post->id)
             ->with('success', ['post'=>$post]);
     }
 }

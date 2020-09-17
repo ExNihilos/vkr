@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="{{route('create')}}" method="get">
+<form action="{{route('post.create')}}" method="get">
     <input type=submit name="but1" id="1">
 </form>
 

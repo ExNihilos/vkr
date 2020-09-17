@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <div class="mb-4">
-        <h1> Автор: {{$post->user->name}} </h1>
+        <h2> Автор: {{$post->user->name}} </h2>
     </div>
     <div class="mb-4">
         <h1> {{$post->title}} </h1>
@@ -15,14 +15,14 @@
     </div>
 
     <div>
-        <form action="{{route('rating', $post->id)}}">
+        <form action="{{route('post.rating', $post->id)}}">
             <button class="btn-outline-primary mt-3" type="submit"> Оценить </button>
         </form>
     </div>
 
     <div class="container">
         <div class="row justify-content-center">
-            <form class="col-md-8" action="{{route('addCommentary')}}" method="post" style="margin-top: 50px;">
+            <form class="col-md-8" action="{{route('commentary.store')}}" method="post" style="margin-top: 50px;">
                 @csrf
                 <div class="form-group">
                     <label for="text"> <h4>Добавить комментарий</h4></label>

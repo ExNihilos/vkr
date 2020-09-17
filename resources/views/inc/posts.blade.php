@@ -2,7 +2,7 @@
         <div class="mt-5" style="border-bottom:3px solid">
             <label for="posts" id="lab"> <h3>Посты:</h3> </label>
 
-            <form class="col-md-8" action="{{route('sort', 'rating')}}" method="get">
+            <form class="col-md-8" action="{{route('post.sort', 'rating')}}" method="get">
                 <div class="form-group">
                     <button type="submit" class="btn-rounded w-25">
                         По рейтингу
@@ -10,7 +10,7 @@
                 </div>
             </form>
 
-            <form class="col-md-8" action="{{route('sort', 'date')}}" method="get">
+            <form class="col-md-8" action="{{route('post.sort', 'date')}}" method="get">
                 <div class="form-group">
                     <button type="submit" class="btn-rounded w-25">
                         По дате
@@ -29,7 +29,7 @@
 {{--                <a href="{{route('commentary', $post->id)}}">--}}
 {{--                    <input class="badge-pill" type="button" name="btn1" value="Добавить комментарий" style="margin-top:10px; margin-left:85%">--}}
 {{--                </a>--}}
-                <a href="{{route('detail', $post->id)}}">
+                <a href="{{route('post.show', $post->id)}}">
                     <input class="btn-primary" type="button" name="btn2" id="btn2" value="Читать полностью" style="margin-top:10px; margin-left:85%">
                 </a>
 {{--                <a href="{{route('rate',$post->id)}}">--}}

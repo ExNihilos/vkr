@@ -10,7 +10,7 @@
 
 
 <div class= "menu">
-    <form action="{{route('store')}}" method="post">
+    <form action="{{route('post.store')}}" method="post">
         @csrf
         <label for="title" id="postTitle">Название:</label>
         <input type="text" name="title" id="title" required>
