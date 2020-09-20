@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Commentary;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Type\Integer;
 
@@ -32,7 +33,9 @@ class HomeController extends Controller
     public function showPosts()
     {
         $posts = $this -> getPosts();
-        return view('home', ['posts'=>$posts]);
+        $tags = Tag::all();
+
+        return view('home', ['posts'=>$posts,'tags'=>$tags]);
 
         /*$paste = new Paste();
         dd($paste->all());*/

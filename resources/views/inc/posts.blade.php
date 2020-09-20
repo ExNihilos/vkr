@@ -1,4 +1,5 @@
- <div class="container" id="posts">
+{{--use \Illuminate\Support\Facades\Auth --}}
+<div class="container" id="posts">
         <div class="mt-5" style="border-bottom:3px solid">
             <label for="posts" id="lab"> <h3>Посты:</h3> </label>
 
@@ -29,9 +30,26 @@
 {{--                <a href="{{route('commentary', $post->id)}}">--}}
 {{--                    <input class="badge-pill" type="button" name="btn1" value="Добавить комментарий" style="margin-top:10px; margin-left:85%">--}}
 {{--                </a>--}}
+                @unless($post->tags->isEmpty())
+                <div class="form-group">
+                    Теги:
+                    <ul>
+                    @foreach($post->tags as $tag)
+                            <li>
+                             {{$tag->name}}
+                            </li>
+                    @endforeach
+                    </ul>
+                </div>
+                @endunless
                 <a href="{{route('post.show', $post->id)}}">
                     <input class="btn-primary" type="button" name="btn2" id="btn2" value="Читать полностью" style="margin-top:10px; margin-left:85%">
                 </a>
+                @if(\Illuminate\Support\Facades\Auth::user()->getAuthIdentifier()==$post->user_id)
+                <a href="{{route('post.edit', $post->id)}}">
+                    <input class="btn-primary" type="button" name="btn2" id="btn2" value="Редактировать" style="margin-top:10px; margin-left:85%">
+                </a>
+                @endif
 {{--                <a href="{{route('rate',$post->id)}}">--}}
 {{--                    <input type="button1" name="btn11" value="+" style="margin-top:10px; margin-left:85%">--}}
 {{--                </a>--}}

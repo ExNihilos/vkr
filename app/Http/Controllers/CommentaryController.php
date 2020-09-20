@@ -28,7 +28,7 @@ class CommentaryController extends Controller
 
     public function store(CommentaryRequest $request)
     {
-//        dd($request);
+
 //        $commentary = new Commentary();
 //        $commentary->text = $request->input('text');
 //        $commentary->post_id = 10;
@@ -38,7 +38,6 @@ class CommentaryController extends Controller
 //            ->route('home')
 //            ;//->with('success',  "Запись успешно сохранена!  Cсылка на пасту: /commentary/link/$hash");
 
-        //dd($request);
 
         $commentary = $request->validated();
         $userid = Auth::user()->getAuthIdentifier();
@@ -49,7 +48,10 @@ class CommentaryController extends Controller
 
         $commentary = $this->commentaryRepository->store($commentary);
         $post = Post::where('id', $post_id)->first();
-        return view('post', ['post' => $post]);
+      //  return view('post', ['post' => $post]);
+        return redirect()
+            ->route('post.show', $post->id)
+            ->with('success', ['post' => $post]);
     }
 
     public function rate($id)
@@ -57,21 +59,22 @@ class CommentaryController extends Controller
         $userId = Auth::user()->getAuthIdentifier();
         $commentary= Commentary::where('id', $id)->first();
 
-        if (is_null(Rating::where([['subject_id', $id], ['user_id', $userId]])->first())) {
+        if (is_null(Rating::where([['subject_id', $id], ['user_id', $userId], ['subject_type', 'commentary']])->first())) {
             $rating[] = new Rating();
             $rating['user_id'] = $userId;
             $rating['subject_id'] = $id;
-            $rating['type'] = 'commentary';
+            $rating['subject_type'] = 'commentary';
             Rating::create($rating);
 
             $commentary->rating += 1;
             $commentary->save();
         }
 
-//        return view('post');
-//        return redirect()
-//            ->route('post.show')
-//            ->with('success');
+        $post = $commentary->post;
+
+        return redirect()
+            ->route('post.show', $post->id)
+            ->with('success', ['id' => $post]);
 
     }
 }

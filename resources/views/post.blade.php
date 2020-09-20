@@ -11,7 +11,7 @@
         <h4>{{$post->text}}</h4>
     </div>
     <div>
-        <h5>Рейтинг: {{$post->rating}}</h5>
+        <h5 class="mt-4">Рейтинг: {{$post->rating}}</h5>
     </div>
 
     <div>

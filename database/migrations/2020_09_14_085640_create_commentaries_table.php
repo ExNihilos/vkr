@@ -15,11 +15,11 @@ class CreateCommentariesTable extends Migration
     {
         Schema::create('commentaries', function (Blueprint $table) {
             $table->id();
-            $table->text('text')->nullable();
-            $table->string('user')->nullable();
+            $table->text('text');
+            $table->string('user');
             //$table->biginteger('post_id')->nullable()->unsigned();
             $table->integer('rating')->default(0);
-            $table->foreignId('post_id')->default(1)->references('id')->on('posts');
+            $table->foreignId('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->timestamps();
         });
     }

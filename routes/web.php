@@ -17,8 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 //
 //Route::get('/', function () {
 //    //return view('welcome');
@@ -48,11 +46,20 @@ Route::post('/posts/store', [PostController::class, 'store'])->name('post.store'
 
 Auth::routes();
 
+Route::group(['middleware' => 'auth:web'],function() {
+
+});
+
 Route::get('/home', [HomeController::class, 'showPosts'])->name('home');
 //Route::get('/commentary', [CommentaryController::class, 'showCommentary'])->name('commentary');
 Route::post('/commentaries/store', [CommentaryController::class, 'store'])->name('commentary.store');
 Route::get('/home/sort/{type}', [PostController::class, 'sort'])->name('post.sort');
-Route::get('home/posts/{id}', [PostController::class, 'showPost'])->name('post.show');
-Route::get('/home/posts/{id}/rate', [PostController::class, 'rate'])->name('post.rating');
-Route::get('/home/posts/{id}/commentary', [CommentaryController::class, 'rate'])->name('commentary.rating');
+
+Route::prefix('/posts/{id}')->group(function (){
+    Route::get('/', [PostController::class, 'showPost'])->name('post.show');
+    Route::get('/rate', [PostController::class, 'rate'])->name('post.rating');
+    Route::get('/commentary', [CommentaryController::class, 'rate'])->name('commentary.rating');
+    Route::get('/edit', [PostController::class, 'edit'])->name('post.edit');
+});
+
 

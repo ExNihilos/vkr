@@ -8,11 +8,11 @@ use PhpParser\Node\Expr\Array_;
 
 class PostRepository
 {
-    public function store(Array $post) {
+    public function store( $post) {
         return Post::create($post);
     }
 
-    public function update(Array $post) {
+    public function update( $post) {
         return Post::update($post);
     }
 
