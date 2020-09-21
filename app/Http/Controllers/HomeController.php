@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Commentary;
-use App\Models\Post;
 use App\Models\Tag;
-use Illuminate\Http\Request;
-use Ramsey\Uuid\Type\Integer;
+use App\Repositories\PostRepository;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
@@ -15,9 +15,14 @@ class HomeController extends Controller
      *
      * @return void
      */
+
+    private $postRepository;
+
+
     public function __construct()
     {
         $this->middleware('auth');
+        $this->postRepository = app(PostRepository::class);
     }
 
     /**
@@ -30,24 +35,15 @@ class HomeController extends Controller
         return view('home');
     }
 
+    /**
+     * @return Application|Factory|View
+     */
     public function showPosts()
     {
-        $posts = $this -> getPosts();
+        $posts = $this->postRepository->getPosts();
         $tags = Tag::all();
 
-        return view('home', ['posts'=>$posts,'tags'=>$tags]);
-
-        /*$paste = new Paste();
-        dd($paste->all());*/
-    }
-
-    public function getPosts()
-    {
-        $posts = Post::orderBy('created_at', 'desc')
-            ->take(10)
-            ->get();
-
-        return $posts;
+        return view('home', ['posts' => $posts,'tags' => $tags]);
     }
 
 }

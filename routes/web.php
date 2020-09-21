@@ -17,43 +17,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//
-//Route::get('/', function () {
-//    //return view('welcome');
-//    return view('start');
-//});
 
-//Route::get('/login', function () {
-//    return view('login');
-//});
-//
-//Route::get('/home', function () {
-//    return view('home');
-//});
-//
 //Route::middleware('app.auth')->group(function () {
 //    Route::group(['prefix' => 'user'], function () {
 //        Route::get('/get', 'UserController@getUser');
 //    });
 //});
 
-//Route::get('/',  [PostController::class, 'index'])->name('create');
+//Route::group(['middleware' => 'auth:web'],function() {
+//
+//});
 
-Route::get('/', [PostController::class, 'index'])->name('post.index');
-
-Route::get('/create', [PostController::class, 'create'])->name('post.create');
-Route::post('/posts/store', [PostController::class, 'store'])->name('post.store');
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth:web'],function() {
-
-});
+Route::get('/', [PostController::class, 'index'])->name('post.index');
+Route::get('/create', [PostController::class, 'create'])->name('post.create');
+Route::post('/posts/{id}/update', [PostController::class, 'update'])->name('post.update');
+Route::post('/posts/store', [PostController::class, 'store'])->name('post.store');
 
 Route::get('/home', [HomeController::class, 'showPosts'])->name('home');
-//Route::get('/commentary', [CommentaryController::class, 'showCommentary'])->name('commentary');
-Route::post('/commentaries/store', [CommentaryController::class, 'store'])->name('commentary.store');
 Route::get('/home/sort/{type}', [PostController::class, 'sort'])->name('post.sort');
+Route::post('/commentaries/store', [CommentaryController::class, 'store'])->name('commentary.store');
 
 Route::prefix('/posts/{id}')->group(function (){
     Route::get('/', [PostController::class, 'showPost'])->name('post.show');

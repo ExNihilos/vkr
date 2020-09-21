@@ -11,7 +11,6 @@
     @csrf
     <textarea name="text" id="text" cols="30" rows="10"> </textarea>
     <input id="button" type="submit" value="Отправить" class="buttons">
-
 </form>
 </body>
 </html>
