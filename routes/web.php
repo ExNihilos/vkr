@@ -45,7 +45,7 @@ Route::prefix('/posts/{id}')->group(function (){
     Route::get('/edit', [PostController::class, 'edit'])->name('post.edit');
     Route::get('/commentary', [CommentaryController::class, 'rate'])->name('commentary.rating');
     Route::get('/commentary/edit', [CommentaryController::class, 'edit'])->name('commentary.edit');
-    Route::post('/commentary/{postid}/update', [CommentaryController::class, 'update'])->name('commentary.update');
+    Route::post('/commentary/{postId}/update', [CommentaryController::class, 'update'])->name('commentary.update');
 
 });
 

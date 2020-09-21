@@ -6,6 +6,10 @@ use App\Http\Requests\CommentaryRequest;
 use App\Models\Commentary;
 use App\Repositories\CommentaryRepository;
 use App\Services\CommentaryService;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class CommentaryController extends Controller
 {
@@ -19,7 +23,7 @@ class CommentaryController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function showCommentary()
     {
@@ -28,7 +32,7 @@ class CommentaryController extends Controller
 
     /**
      * @param CommentaryRequest $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function store(CommentaryRequest $request)
     {
@@ -41,7 +45,7 @@ class CommentaryController extends Controller
 
     /**
      * @param $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function rate($id)
     {
@@ -51,6 +55,10 @@ class CommentaryController extends Controller
             ->with('success', ['id' => $post]);
     }
 
+    /**
+     * @param $id
+     * @return Application|Factory|View
+     */
     public function edit($id)
     {
         $commentary = Commentary::find($id);
@@ -58,11 +66,17 @@ class CommentaryController extends Controller
         return view('commentaryEdit', ['commentary' => $commentary, 'id' => $postId]);
     }
 
+    /**
+     * @param CommentaryRequest $request
+     * @param $id
+     * @return RedirectResponse
+     */
     public function update(CommentaryRequest $request, $id)
     {
-        $this->commentaryService->update($request, $id);
+        $commentary=$this->commentaryService->update($request, $id);
+        $postId=$commentary->post->id;
         return redirect()
-            ->route('home')
+            ->route('post.show', $postId)
             ->with('success');
     }
 }
