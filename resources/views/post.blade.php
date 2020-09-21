@@ -46,7 +46,14 @@
                          <h6 class="bg-success p-2"> Рейтинг: {{$commentary->rating}} </h6>
                          <form action="{{route('commentary.rating', $commentary->id)}}">
                              <button class="btn-outline-primary mt-3" type="submit"> Оценить </button>
+                             @if(\Illuminate\Support\Facades\Auth::user()->name == $commentary->user)
+                             <a href="{{route('commentary.edit', $commentary->id)}}">
+                                 <input class="btn-outline-primary mt-3" id="editButton" type="button" value="Редактировать" class="buttons">
+                             </a>
+                             @endif
                          </form>
+{{--                         @if(\Illuminate\Support\Facades\Auth::user()->getAuthIdentifier()==$commentary->user_id)--}}
+
                     </div>
                   @endforeach
              </div>

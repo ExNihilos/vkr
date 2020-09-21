@@ -62,4 +62,12 @@ class CommentaryService
 
         return $post;
     }
+
+    public function update($request, $id)
+    {
+        $commentary = Commentary::find($id);
+        $commentary->text = $request->text;
+        $commentary->save();
+        return $commentary;
+    }
 }

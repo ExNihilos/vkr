@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CommentaryRequest;
+use App\Models\Commentary;
 use App\Repositories\CommentaryRepository;
 use App\Services\CommentaryService;
 
@@ -48,5 +49,20 @@ class CommentaryController extends Controller
         return redirect()
             ->route('post.show', $post->id)
             ->with('success', ['id' => $post]);
+    }
+
+    public function edit($id)
+    {
+        $commentary = Commentary::find($id);
+        $postId = $commentary->post->id;
+        return view('commentaryEdit', ['commentary' => $commentary, 'id' => $postId]);
+    }
+
+    public function update(CommentaryRequest $request, $id)
+    {
+        $this->commentaryService->update($request, $id);
+        return redirect()
+            ->route('home')
+            ->with('success');
     }
 }
